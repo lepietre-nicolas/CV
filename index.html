@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicolas Lepietre - Global Head of Brand and Marketing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #3182ce;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        /* About */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .strength-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .strength-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .strength-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* Experience */
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 30px;
+            position: relative;
+            margin: 40px 0;
+            width: 50%;
+        }
+        
+        .timeline-item:nth-child(even) {
+            align-self: flex-end;
+            justify-content: flex-start;
+            padding-left: 30px;
+            padding-right: 0;
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            transition: var(--transition);
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: var(--accent);
+            border: 4px solid white;
+            top: 20px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+            right: auto;
+        }
+        
+        .date {
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .company {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .position {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .project-link {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        /* Education & Competencies */
+        .education-competencies {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .education-competencies h2 {
+            color: white;
+        }
+        
+        .education-competencies h2::after {
+            background: white;
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .education-item {
+            margin-bottom: 30px;
+        }
+        
+        .education-date {
+            color: #a0aec0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .education-degree {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .education-school {
+            color: #cbd5e0;
+        }
+        
+        .competencies-list {
+            list-style: none;
+        }
+        
+        .competencies-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .competencies-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 10px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <h1>Nicolas Lepietre</h1>
+            <p class="tagline">Global Head of Brand and Marketing | Brand Strategy, Consumer Products & Team Leadership</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+33 6 03 10 49 50</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>lepietre@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>67 Avenue de la plage, 60260 LAMORLAYE</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <h2>Profil Professionnel</h2>
+            <div class="about-content">
+                <p class="about-text">
+                    Visionary marketing leader with 20+ years of expertise in building global brands and driving business growth in the consumer goods, technology, and retail sectors. Proven track record in developing iconic brand identities, launching successful products, and leading high-performance teams. Expert in omnichannel marketing strategy, digital transformation, and creating compelling brand narratives that resonate with consumers worldwide. Skilled in managing P&L and collaborating with cross-functional teams to deliver market leadership.
+                </p>
+                
+                <h3 style="text-align: center; margin-top: 30px;">Compétences Clés</h3>
+                <div class="strengths-grid">
+                    <div class="strength-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Stratégie de Marque Globale</h4>
+                    </div>
+                    <div class="strength-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Lancement de Produits</h4>
+                    </div>
+                    <div class="strength-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>Gestion de Portefeuille</h4>
+                    </div>
+                    <div class="strength-card">
+                        <i class="fas fa-users"></i>
+                        <h4>Leadership d'Équipe</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <h2>Expérience Professionnelle</h2>
+            <div class="timeline">
+                <!-- Seabex -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">07/2024 - Présent</span>
+                        <h3 class="company">Seabex (AgriTech AI Leader)</h3>
+                        <h4 class="position">Marketing and Communications Director</h4>
+                        <p>Executive Committee Member. Global Brand Strategy: Spearheaded the launch of Seabex Prime, an AI-based premium product, in partnership with industry leaders, positioning the brand as a leader in AgriTech innovation.</p>
+                        <div class="project-links">
+                            <a href="https://seabex.com/" target="_blank" class="project-link">Site Seabex</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hoffmann Green Cement -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">10/2023 – 06/2024</span>
+                        <h3 class="company">Hoffmann Green Cement</h3>
+                        <h4 class="position">Brand Strategy Consultant</h4>
+                        <p>Brand Architecture: Rebuilt the brand identity and architecture for a pioneer in low-carbon cement, strengthening market differentiation and aligning with ESG objectives.</p>
+                        <div class="project-links">
+                            <a href="https://www.ciments-hoffmann.com/fr/" target="_blank" class="project-link">Site Hoffmann</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sir Winston -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">01/2021 – 09/2023</span>
+                        <h3 class="company">Sir Winston</h3>
+                        <h4 class="position">Strategy Director</h4>
+                        <p>Key account : Groupe Saint Gobain (Saint Gobain France / Point.P. / SGDBF / Glass France). Land Rover / Cora. Developed and implemented corporate and internal communication to support clients activities and their transformation program.</p>
+                        <div class="project-links">
+                            <a href="https://sir-winston.fr/programme-securite-saintgobain/" target="_blank" class="project-link">Programme Sécurité</a>
+                            <a href="https://sir-winston.fr/ecosysteme-doutils-rh-la-plateforme-du-batiment/" target="_blank" class="project-link">Écosystème RH</a>
+                            <a href="https://sir-winston.fr/journal-interne-saint-gobain-distribution-batiment-france/" target="_blank" class="project-link">Journal Interne</a>
+                            <a href="https://sir-winston.fr/projet-dentreprise-point-p/" target="_blank" class="project-link">Projet d'Entreprise</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service Plan -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">2017 - 2021</span>
+                        <h3 class="company">Service Plan</h3>
+                        <h4 class="position">Business Director</h4>
+                        <p>Key account : Groupe Andros (Andros / Bonne Maman / Mamie Nova), Groupe Heineken (Desperados / Affligem / Edelweiss). Portfolio Brand Management: Directed brand strategy for leading FMCG portfolios, developing integrated marketing campaigns that won international creative awards.</p>
+                        <div class="project-links">
+                            <a href="https://lareclame.fr/serviceplan/realisations/au-coeur-des-fruits" target="_blank" class="project-link">Au Cœur des Fruits</a>
+                            <a href="https://lareclame.fr/serviceplan/realisations/desperados-project" target="_blank" class="project-link">Desperados Project</a>
+                            <a href="https://lareclame-scanbook.s3.amazonaws.com/cp-andros1528720996.pdf" target="_blank" class="project-link">CP Andros</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Nineteen Groupe -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">08/2007 - 05/2017</span>
+                        <h3 class="company">Nineteen Groupe</h3>
+                        <h4 class="position">Founder / General Manager</h4>
+                        <p>Built and scaled a full-service agency from startup to market leader with 20 professionals and €5M revenue. Retail & Network Expertise: Directed end-to-end brand strategy for multi-location retail chains.</p>
+                        <div class="project-links">
+                            <a href="https://nineteengroupe.fr/fr/" target="_blank" class="project-link">Site Nineteen</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Publicis Conseil -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">04/2001 - 08/2007</span>
+                        <h3 class="company">Publicis Conseil</h3>
+                        <h4 class="position">International Account Director</h4>
+                        <p>Global Brand Strategy for Garnier: Directed worldwide advertising campaigns for this FMCG leader, contributing to its market leadership in Asia. Strategic Brand & Services Marketing for SFR.</p>
+                        <div class="project-links">
+                            <a href="http://www.culturepub.fr/videos/sfr-star/" target="_blank" class="project-link">Campagne SFR</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- JWT -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">04/2000 - 04/2001</span>
+                        <h3 class="company">JWT</h3>
+                        <h4 class="position">European Account Manager</h4>
+                        <p>Key account : Unilever / Lipton / Rolex</p>
+                    </div>
+                </div>
+                
+                <!-- Grey Worldwide -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="date">09/1996 - 04/2000</span>
+                        <h3 class="company">Grey Worldwide</h3>
+                        <h4 class="position">European Account Executive</h4>
+                        <p>Key account : P&G / Mr Propre / Bold 2in1</p>
+                        <div class="project-links">
+                            <a href="https://pubenstock.com/2023/03/05/mr-propre/#jp-carousel-1348" target="_blank" class="project-link">Mr Propre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Competencies -->
+    <section class="education-competencies">
+        <div class="container">
+            <h2>Formation & Compétences</h2>
+            <div class="two-columns">
+                <div class="education">
+                    <h3 style="margin-bottom: 20px;">Formation</h3>
+                    <div class="education-item">
+                        <span class="education-date">09/1996 - 06/1997</span>
+                        <h4 class="education-degree">Master's Degree in Communication</h4>
+                        <p class="education-school">PARIS II Panthéon Assas</p>
+                    </div>
+                    <div class="education-item">
+                        <span class="education-date">09/1994 - 06/1996</span>
+                        <h4 class="education-degree">DUT in Communication & Advertising</h4>
+                        <p class="education-school">PARIS V René Descartes</p>
+                    </div>
+                </div>
+                
+                <div class="competencies">
+                    <h3 style="margin-bottom: 20px;">Compétences Clés</h3>
+                    <ul class="competencies-list">
+                        <li>Strategic brand positioning and storytelling</li>
+                        <li>Integrated marketing and communication plans (B2B/B2C)</li>
+                        <li>Corporate, internal, and ESG communications</li>
+                        <li>Executive visibility and thought leadership</li>
+                        <li>Digital transformation and customer experience</li>
+                        <li>International rollout and market expansion</li>
+                        <li>Team leadership and stakeholder management</li>
+                        <li>Agency management and entrepreneurship</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/nicolaslepietre" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="mailto:lepietre@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>© 2024 Nicolas Lepietre. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animation pour les éléments de la timeline
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            timelineItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
